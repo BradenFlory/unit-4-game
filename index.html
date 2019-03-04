@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Crystal Game</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./assets/css/style.css">
+
+    </head>
+
+    <body>
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Crystal Game</h1>
+                <p class="lead">
+                    <p>You will be given a random number at the start of the game</p>
+                    <p>There are four crystals below. By clicking on a crystal you will add a specific amount of
+                        points to
+                        your
+                        total score.</p>
+                    <p>You win the game by matching your total score to random number, you lose the game if your
+                        total
+                        score
+                        goes above the random number.</p>
+                    <p>The value of each crystal is hidden from you until you click on it.</p>
+                    <p>Each time when the game starts, the game will change the values of each crystal.</p>
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Number to Guess: <span id="winning-number"></span></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h1>Your current number: <span id="counting-number"></span></h1>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <img id="red-crystal" src="./assets/images/Red Crystal.JPG" alt="Red Crystal">
+                </div>
+                <div class="col">
+                    <img id="green-crystal" src="./assets/images/Green Crystal.jpeg" alt="Green Crystal">
+                </div>
+                <div class="col">
+                    <img id="blue-crystal" src="./assets/images/Blue Crystal.png" alt="Blue Crystal">
+                </div>
+                <div class="col">
+                    <img id="yellow-crystal" src="./assets/images/Yellow Crystal.jpg" alt="Yellow Crystal">
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <script src="./assets/javascript/game.js"></script>
+    </body>
+
+</html>
