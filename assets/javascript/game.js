@@ -1,78 +1,81 @@
-var redCrystal = [1, 5, 8, 16];
-var greenCrystal = [2, 4, 6, 15];
-var blueCrystal = [3, 11, 9, 12];
-var yellowCrystal = [7, 13, 14, 10];
-var countingNumber = 0
+
+// create the variables for all of my HTML elements
+var countingNumber = 0;
+var wins = 0;
+var losses = 0;
+
+
+
 
 // Create random number to guess
 
-document.getElementById("winning-number").innerHTML =
-    Math.floor(Math.random() * 50) + 35;
+var numberToGuess = document.getElementById("winning-number").innerHTML =
+    Math.floor(Math.random() * 50) + 20;
+
+// create for loops that will go through the 
+// crystal image arrays and set the value of the crystal images 
+
+var redCrystalPoint = (Math.floor(Math.random() * 12) + 1);
+console.log(redCrystalPoint);
+
+var greenCrystalPoint = (Math.floor(Math.random() * 12) + 1);
+console.log(greenCrystalPoint);
+
+var blueCrystalPoint = (Math.floor(Math.random() * 12) + 1);
+console.log(blueCrystalPoint);
+
+var yellowCrystalPoint = (Math.floor(Math.random() * 12) + 1);
+console.log(yellowCrystalPoint);
+
 
 // Link in 4 different images and make them clickable
 
-
-for (var i = 0; i < redCrystal.length; i++) {
-
-}
-for (var i = 0; i < greenCrystal.length; i++) {
-
-}
-for (var i = 0; i < blueCrystal.length; i++) {
-
-}
-for (var i = 0; i < yellowCrystal.length; i++) {
-
-}
-
 $("#red-crystal").on("click", function () {
-    var redCrystal = document.getElementById("counting-number");
-    document.getElementById(countingNumber).innerHTML = redCrystal;
-    console.log("New Score: " + countingNumber);
+    $("#counting-number").html("<h1>Your current number: " + countingNumber + "</h1>");
+    countingNumber += redCrystalPoint;
+    console.log(countingNumber);
+    gameover();
 });
 $("#green-crystal").on("click", function () {
-    console.log("New Score: " + countingNumber);
+    $("#counting-number").html("<h1>Your current number: " + countingNumber + "</h1>");
+    countingNumber += greenCrystalPoint;
+    console.log(countingNumber);
+    gameover();
 });
 $("#blue-crystal").on("click", function () {
-    console.log("New Score: " + countingNumber);
+    $("#counting-number").html("<h1>Your current number: " + countingNumber + "</h1>");
+    countingNumber += blueCrystalPoint;
+    console.log(countingNumber);
+    gameover();
 });
 $("#yellow-crystal").on("click", function () {
-    console.log("New Score: " + countingNumber);
+    $("#counting-number").html("<h1>Your current number: " + countingNumber + "</h1>");
+    countingNumber += yellowCrystalPoint;
+    console.log(countingNumber);
+    gameover();
 });
+function reset() {
+    countingNumber = 0;
+    numberToGuess = numberToGuess = document.getElementById("winning-number").innerHTML =
+        (Math.floor(Math.random() * 100) + 1);
 
-// Each image will be given a certain value
-    // That value will randomize each round
+}
+function gameover() {
+
+    if (countingNumber === numberToGuess) {
+        alert("You win!");
+        wins++;
+        reset();
 
 
-//when the counting number equals the number to guess, player wins the game.
-// If the player goes over the number to guess, they lose.
+    }
+    if (countingNumber > numberToGuess) {
+        alert("You lost!");
+        losses++;
+        reset();
 
+    }
+    $("#wins-number").html("<h1>Wins: " + wins + "</h1>");
+    $("#losses-number").html("<h1>Losses: " + losses + "</h1>");
 
-
-// var numberToWin = 53;
-
-// $("#winning-number").text(numberToWin);
-
-// var counter = 0;
-// var numberOptions = [10, 5, 3, 7];
-// for (var i = 0; i < numberOptions.length; i++) {
-//     var imageCrystal = $("<img>");
-//     imageCrystal.addClass("crystal-image");
-//     imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg");
-//     imageCrystal.attr("data-crystalvalue", numberOptions[i]);
-//     $("#crystals").append(imageCrystal);
-// }
-
-// $(".crystal-image").on("click", function () {
-//     var crystalValue = ($(this).attr("data-crystalvalue"));
-//     crystalValue = parseInt(crystalValue);
-//     counter += crystalValue;
-//     alert("New score: " + counter);
-//     if (counter === numberToWin) {
-//         alert("You win!");
-//     }
-//     else if (counter >= numberToWin) {
-//         alert("You lose!!");
-//     }
-
-// });
+}

@@ -1,8 +1,12 @@
 body{
     background-image: url(../images/Ocean.jpg);
+    
 }
 .title{
     padding: 10px;
+}
+.jumbotron-fluid{
+    background-image: url(../images/Ocean.jpg);
 
 }
 #instructions{
